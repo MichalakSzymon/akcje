@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: price-service
+
+server:
+  port: 80802
+
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:80800/eureka/
+  instance:
+    hostname: localhost

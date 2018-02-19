@@ -1,0 +1,24 @@
+
+spring:
+  application:
+    name: eureka-service
+
+server:
+  port: 80800
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+
+zuul:
+  prefix: /api
+  routes:
+    db-service:
+      path: /db-service/**
+      url: http://localhost:80801
+    price-service:
+      path: /price-service/**
+      url: http://localhost:80802
